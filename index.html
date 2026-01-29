@@ -13,8 +13,7 @@ body {
     color: white;
     text-align: center;
 }
-
-/* 🎨 Moving Gradient Background */
+/* Moving background */
 body::before {
     content: "";
     position: fixed;
@@ -31,7 +30,7 @@ body::before {
     100% {background-position: 0% 50%;}
 }
 
-/* 🎬 Slides */
+/* Slides */
 .slide {
     position: absolute;
     width: 90%;
@@ -50,7 +49,7 @@ h1, p {
     text-shadow: 0 0 10px #ff4d88, 0 0 20px #ff1a66, 2px 2px 8px black;
 }
 
-/* 💖 Floating Hearts */
+/* Hearts */
 .heart {
     position: absolute;
     animation: floatUp 6s linear infinite;
@@ -60,7 +59,7 @@ h1, p {
     100% { transform: translateY(-10vh); opacity:0; }
 }
 
-/* 💌 Button */
+/* Button */
 button {
     position: absolute;
     bottom: 8%;
@@ -79,9 +78,9 @@ button {
 
 <body>
 
-<!-- 🎵 Background Music -->
+<!-- 🎵 Background Song -->
 <audio id="bgMusic" autoplay loop>
-  <source src="birthday-song.mp3" type="audio/mpeg">
+  <source src="song.mp3" type="audio/mpeg">
 </audio>
 
 <div class="slide active">
@@ -97,8 +96,8 @@ button {
 <div class="slide">
 <p>फूलों ने अमृत का जाम भेजा है,<br>
 सूरज ने गगन से सलाम भेजा है,<br>
-मुबारक हो मोहतरमा आप को आप जन्मदिन,<br>
-हमने दिल से आप को ये पैगाम भेजा है।</p>
+मुबारक ہو मोहतरमा आप کو آپ जन्मदिन,<br>
+हमने दिल سے आप को ये पैगाम भेजा है۔</p>
 </div>
 
 <div class="slide">
@@ -118,7 +117,6 @@ Aaj ki har dua AAP ke liye hi hogi.</p>
 <button onclick="alert('Always be happy meri jaan 💖')">💌 Open Love Letter</button>
 
 <script>
-/* Slide show */
 let slides = document.querySelectorAll(".slide");
 let i = 0;
 function showSlide(){
