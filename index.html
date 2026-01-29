@@ -1,64 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Mohtarma 💖</title>
+<title>Happy Birthday</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  text-align: center;
-  color: white;
-  overflow-x: hidden;
-  background: linear-gradient(-45deg,#ff4e8a,#ff6fa5,#ff85b8,#ff4e8a);
-  background-size: 400% 400%;
-  animation: bgMove 10s infinite alternate;
+body{
+  margin:0;
+  font-family:sans-serif;
+  text-align:center;
+  color:white;
+  background:linear-gradient(-45deg,#ff4e8a,#ff6fa5,#ff85b8);
+  background-size:400% 400%;
+  animation:bg 10s infinite alternate;
 }
-
-@keyframes bgMove {
+@keyframes bg{
   0%{background-position:left;}
   100%{background-position:right;}
 }
 
-h1 {
-  font-size: 38px;
-  margin-top: 30px;
-  text-shadow: 0 0 15px #fff;
+h1{
+  margin-top:25px;
+  text-shadow:0 0 15px white;
 }
 
-.box {
-  background: rgba(0,0,0,0.35);
-  margin: 20px;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px #ff9dcf;
+.box{
+  background:rgba(0,0,0,0.35);
+  margin:20px;
+  padding:20px;
+  border-radius:20px;
 }
 
-button {
-  background: #ff2e6d;
-  color: white;
-  border: none;
-  padding: 15px 35px;
-  font-size: 20px;
-  border-radius: 40px;
-  margin-top: 10px;
-  box-shadow: 0 0 20px #ff2e6d;
+button{
+  background:#ff2e6d;
+  border:none;
+  padding:15px 30px;
+  border-radius:30px;
+  color:white;
+  font-size:18px;
 }
 
-img {
-  width: 85%;
-  max-width: 320px;
-  border-radius: 20px;
-  margin-top: 15px;
-  box-shadow: 0 0 25px #fff;
+img{
+  width:85%;
+  max-width:320px;
+  border-radius:20px;
+  margin-top:15px;
+  box-shadow:0 0 20px pink;
 }
 
-#shayari {
-  font-size: 22px;
-  margin-top: 10px;
-  min-height: 80px;
+#shayari{
+  font-size:22px;
+  margin-top:10px;
 }
 </style>
 </head>
@@ -68,47 +60,39 @@ img {
 <h1>Happy Birthday Mohtarma 💗</h1>
 
 <div class="box">
-  <h2>This is for you, let's cut it 🎂</h2>
-  <button onclick="cutCake()">Cut Cake 🎉</button>
+<h2>This is for you, let's cut it 🎂</h2>
+<button onclick="alert('Cake cut 🎂 Happy Birthday 💖')">Cut Cake</button>
 </div>
 
+<!-- EXACT FILE NAME USE KIYA -->
 <img src="anime.png.jpg">
 <img src="cake.png.jpg">
 
 <div class="box">
-  <div id="shayari"></div>
+<div id="shayari"></div>
 </div>
 
-<audio id="bgMusic" loop>
-  <source src="happy_birthday_my_sweetheart_my_life_my_love_status_song_WhatsApp_status_birthday_status(256k).mp3" type="audio/mp3">
+<audio id="music" loop>
+<source src="happy_birthday_my_sweetheart_my_life_my_love_status_song_WhatsApp_status_birthday_status(256k).mp3" type="audio/mp3">
 </audio>
 
 <script>
-// Mobile song play fix
-document.body.addEventListener("click", function () {
-  document.getElementById("bgMusic").play();
-}, { once: true });
+document.body.addEventListener("click",()=>music.play(),{once:true});
 
-// Cake message
-function cutCake(){
-  alert("Cake cut ho gaya 🎂 Happy Birthday Mohtarma 💖");
-}
-
-// Shayari slider
-let lines = [
-"तारों से आगे भी कोई दुनिया होगी ✨",
-"सूरज ने गगन से सलाम भेजा है ☀️",
-"मुबारक हो मोहतरमा, आपको जन्मदिन 💐",
-"हमने दिल से आपको ये पैगाम भेजा है ❤️"
+let lines=[
+"تاروں سے آگے بھی کوئی دنیا ہوگی ✨",
+"سورج نے گگن سے سلام بھیجا ہے ☀️",
+"مبارک ہو محترمہ آپ کو یہ جنم دن 💐",
+"ہم نے دل سے آپ کو یہ پیغام بھیجا ہے ❤️"
 ];
 
 let i=0;
-function showShayari(){
-  document.getElementById("shayari").innerText = lines[i];
-  i=(i+1)%lines.length;
+function show(){
+document.getElementById("shayari").innerText=lines[i];
+i=(i+1)%lines.length;
 }
-setInterval(showShayari, 3000);
-showShayari();
+setInterval(show,3000);
+show();
 </script>
 
 </body>
