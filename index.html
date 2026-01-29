@@ -87,26 +87,26 @@ p {font-size:22px; line-height:1.6;}
 </div>
 
 <script>
-let slides = document.querySelectorAll('.slide');
+let slides = document.querySelectorAll(".slide");
 let i = 0;
 
-setInterval(() => {
-  slides[i].classList.remove('active');
+function showSlide() {
+  slides.forEach(s => s.classList.remove("active"));
+  slides[i].classList.add("active");
   i = (i + 1) % slides.length;
-  slides[i].classList.add('active');
-}, 4000);
+}
+
+setInterval(showSlide, 4000);
+showSlide();
 
 // floating hearts
-setInterval(()=>{
+setInterval(() => {
   let heart = document.createElement("div");
-  heart.innerHTML="💖";
-  heart.className="heart";
-  heart.style.left=Math.random()*100+"vw";
-  heart.style.fontSize=(Math.random()*20+20)+"px";
+  heart.innerHTML = "💖";
+  heart.className = "heart";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 20) + "px";
   document.body.appendChild(heart);
-  setTimeout(()=>heart.remove(),6000);
-},800);
+  setTimeout(() => heart.remove(), 6000);
+}, 800);
 </script>
-
-</body>
-</html>
