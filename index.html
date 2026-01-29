@@ -7,140 +7,137 @@
 
 <style>
 body {
-    margin: 0;
-    overflow: hidden;
-    font-family: 'Segoe UI', sans-serif;
-    color: white;
-    text-align: center;
-}
-/* Moving background */
-body::before {
-    content: "";
-    position: fixed;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, #ff4d6d, #c9184a, #ff8fa3, #ff4d6d);
-    background-size: 400% 400%;
-    animation: bgMove 12s ease infinite;
-    z-index: -1;
-}
-@keyframes bgMove {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
+  margin:0;
+  overflow:hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at center, #ff4d6d, #c9184a);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  text-align:center;
 }
 
-/* Slides */
-.slide {
-    position: absolute;
-    width: 90%;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    background: rgba(0,0,0,0.35);
-    padding: 25px;
-    border-radius: 25px;
+/* Animated Particles Background */
+canvas {
+  position:fixed;
+  top:0; left:0;
+  z-index:-1;
 }
-.active { opacity: 1; }
+
+/* Text Scene */
+.scene {
+  position:absolute;
+  opacity:0;
+  transform:scale(0.8);
+  transition:1s;
+  width:90%;
+}
+
+.active {
+  opacity:1;
+  transform:scale(1);
+}
 
 h1, p {
-    text-shadow: 0 0 10px #ff4d88, 0 0 20px #ff1a66, 2px 2px 8px black;
+  text-shadow:0 0 15px #fff, 0 0 25px #ff1a66;
 }
 
-/* Hearts */
-.heart {
-    position: absolute;
-    animation: floatUp 6s linear infinite;
-}
-@keyframes floatUp {
-    0% { transform: translateY(100vh); opacity:1; }
-    100% { transform: translateY(-10vh); opacity:0; }
-}
-
-/* Button */
 button {
-    position: absolute;
-    bottom: 8%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 15px 35px;
-    font-size: 18px;
-    border: none;
-    border-radius: 40px;
-    background: #ff4d88;
-    color: white;
-    box-shadow: 0 0 20px #ff1a66;
+  position:fixed;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  background:#ff4d88;
+  color:white;
+  font-size:16px;
 }
 </style>
 </head>
 
 <body>
 
+<canvas id="bg"></canvas>
+
 <!-- 🎵 Background Song -->
 <audio id="bgMusic" autoplay loop>
   <source src="song.mp3" type="audio/mpeg">
 </audio>
 
-<div class="slide active">
-    <h1>3... 2... 1... 💖</h1>
-    <h1>Happy Birthday Mohtarma 🎂</h1>
-</div>
+<div class="scene active"><h1>3... 2... 1...</h1></div>
+<div class="scene"><h1>Happy Birthday Mohtarma 💖</h1></div>
 
-<div class="slide">
-<p>یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے<br>
-ورنہ چاند کی کہاں سالگرہ ہوتی ہے</p>
-</div>
+<div class="scene"><p>
+یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے<br>
+ورنہ چاند کی کہاں سالگرہ ہوتی ہے
+</p></div>
 
-<div class="slide">
-<p>फूलों ने अमृत का जाम भेजा है,<br>
+<div class="scene"><p>
+फूलों ने अमृत का जाम भेजा है,<br>
 सूरज ने गगन से सलाम भेजा है,<br>
-मुबारक ہو मोहतरमा आप کو آپ जन्मदिन,<br>
-हमने दिल سے आप को ये पैगाम भेजा है۔</p>
-</div>
+मुबारक हो मोहतरमा आप को जन्मदिन,<br>
+हमने दिल से आप को ये पैगाम भेजा है।
+</p></div>
 
-<div class="slide">
-<p>Taaron se aage bhi koi duniya hogi,<br>
+<div class="scene"><p>
+Taaron se aage bhi koi duniya hogi,<br>
 Jahan har khushi Mohtarma AAP ke naam hogi,<br>
 Mubarak ho janamdin meri jaan,<br>
-Aaj ki har dua AAP ke liye hi hogi.</p>
-</div>
+Aaj ki har dua AAP ke liye hi hogi.
+</p></div>
 
-<div class="slide">
-<p>خدا سے کیا مانگوں آپ کے لیے میں،<br>
+<div class="scene"><p>
+خدا سے کیا مانگوں آپ کے لیے میں،<br>
 کہ آپ خود کسی کی دعا کا اثر لگتی ہو۔<br>
-مبارک ہو محترمہ یہ یومِ ولادت کا حسین دن،<br>
-آپ زمین پہ رہتی ہو مگر چاند کی چھوی لگتی ہو۔</p>
-</div>
+مبارک ہو محترمہ یہ یومِ ولادت کا حسین دن،
+آپ زمین پہ رہتی ہو مگر چاند کی چھوی لگتی ہو۔
+</p></div>
 
-<button onclick="alert('Always be happy meri jaan 💖')">💌 Open Love Letter</button>
+<button onclick="alert('You are my world 💖')">💌 Love Letter</button>
 
 <script>
-let slides = document.querySelectorAll(".slide");
+/* Scene switching like video cuts */
+let scenes = document.querySelectorAll(".scene");
 let i = 0;
-function showSlide(){
-    slides.forEach(s => s.classList.remove("active"));
-    slides[i].classList.add("active");
-    i = (i+1) % slides.length;
-}
-setInterval(showSlide, 4000);
+setInterval(() => {
+  scenes[i].classList.remove("active");
+  i = (i+1)%scenes.length;
+  scenes[i].classList.add("active");
+}, 3500);
 
-/* Hearts */
-setInterval(()=>{
-    let heart = document.createElement("div");
-    heart.className="heart";
-    heart.innerHTML="💖";
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.fontSize=(Math.random()*20+20)+"px";
-    document.body.appendChild(heart);
-    setTimeout(()=>heart.remove(),6000);
-},500);
-
-/* 🎵 Soft Music Volume */
-const music = document.getElementById("bgMusic");
+/* Soft music */
+let music = document.getElementById("bgMusic");
 music.volume = 0.2;
-document.body.addEventListener("click", () => music.play());
+document.body.addEventListener("click", ()=>music.play());
+
+/* Particle animation */
+let canvas=document.getElementById("bg");
+let ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+let stars=[];
+for(let i=0;i<80;i++){
+  stars.push({x:Math.random()*canvas.width,
+              y:Math.random()*canvas.height,
+              r:Math.random()*2});
+}
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="rgba(255,255,255,0.6)";
+  stars.forEach(s=>{
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fill();
+    s.y-=0.3;
+    if(s.y<0)s.y=canvas.height;
+  });
+  requestAnimationFrame(draw);
+}
+draw();
 </script>
 
 </body>
