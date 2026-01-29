@@ -14,7 +14,7 @@ body {
     text-align: center;
 }
 
-/* 🌈 MOVING BACKGROUND */
+/* 🎨 Moving Gradient Background */
 body::before {
     content: "";
     position: fixed;
@@ -25,14 +25,13 @@ body::before {
     animation: bgMove 12s ease infinite;
     z-index: -1;
 }
-
 @keyframes bgMove {
     0% {background-position: 0% 50%;}
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}
 }
 
-/* Slides */
+/* 🎬 Slides */
 .slide {
     position: absolute;
     width: 90%;
@@ -45,25 +44,23 @@ body::before {
     padding: 25px;
     border-radius: 25px;
 }
-
 .active { opacity: 1; }
 
 h1, p {
     text-shadow: 0 0 10px #ff4d88, 0 0 20px #ff1a66, 2px 2px 8px black;
 }
 
-/* Floating hearts */
+/* 💖 Floating Hearts */
 .heart {
     position: absolute;
     animation: floatUp 6s linear infinite;
 }
-
 @keyframes floatUp {
     0% { transform: translateY(100vh); opacity:1; }
     100% { transform: translateY(-10vh); opacity:0; }
 }
 
-/* Button */
+/* 💌 Button */
 button {
     position: absolute;
     bottom: 8%;
@@ -82,9 +79,9 @@ button {
 
 <body>
 
-<!-- 🎵 MUSIC -->
-<audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+<!-- 🎵 Background Music -->
+<audio id="bgMusic" autoplay loop>
+  <source src="birthday-song.mp3" type="audio/mpeg">
 </audio>
 
 <div class="slide active">
@@ -93,37 +90,37 @@ button {
 </div>
 
 <div class="slide">
-    <p>یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے<br>
-    ورنہ چاند کی کہاں سالگرہ ہوتی ہے</p>
+<p>یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے<br>
+ورنہ چاند کی کہاں سالگرہ ہوتی ہے</p>
 </div>
 
 <div class="slide">
-    <p>फूलों ने अमृत का जाम भेजा है,<br>
-    सूरज ने गगन से सलाम भेजा है,<br>
-    मुबारक हो मोहतरमा आप को आप जन्मदिन,<br>
-    हमने दिल से आप को ये पैगाम भेजा है।</p>
+<p>फूलों ने अमृत का जाम भेजा है,<br>
+सूरज ने गगन से सलाम भेजा है,<br>
+मुबारक हो मोहतरमा आप को आप जन्मदिन,<br>
+हमने दिल से आप को ये पैगाम भेजा है।</p>
 </div>
 
 <div class="slide">
-    <p>Taaron se aage bhi koi duniya hogi,<br>
-    Jahan har khushi Mohtarma AAP ke naam hogi,<br>
-    Mubarak ho janamdin meri jaan,<br>
-    Aaj ki har dua AAP ke liye hi hogi.</p>
+<p>Taaron se aage bhi koi duniya hogi,<br>
+Jahan har khushi Mohtarma AAP ke naam hogi,<br>
+Mubarak ho janamdin meri jaan,<br>
+Aaj ki har dua AAP ke liye hi hogi.</p>
 </div>
 
 <div class="slide">
-    <p>خدا سے کیا مانگوں آپ کے لیے میں،<br>
-    کہ آپ خود کسی کی دعا کا اثر لگتی ہو۔<br>
-    مبارک ہو محترمہ یہ یومِ ولادت کا حسین دن،<br>
-    آپ زمین پہ رہتی ہو مگر چاند کی چھوی لگتی ہو۔</p>
+<p>خدا سے کیا مانگوں آپ کے لیے میں،<br>
+کہ آپ خود کسی کی دعا کا اثر لگتی ہو۔<br>
+مبارک ہو محترمہ یہ یومِ ولادت کا حسین دن،<br>
+آپ زمین پہ رہتی ہو مگر چاند کی چھوی لگتی ہو۔</p>
 </div>
 
 <button onclick="alert('Always be happy meri jaan 💖')">💌 Open Love Letter</button>
 
 <script>
+/* Slide show */
 let slides = document.querySelectorAll(".slide");
 let i = 0;
-
 function showSlide(){
     slides.forEach(s => s.classList.remove("active"));
     slides[i].classList.add("active");
@@ -141,6 +138,11 @@ setInterval(()=>{
     document.body.appendChild(heart);
     setTimeout(()=>heart.remove(),6000);
 },500);
+
+/* 🎵 Soft Music Volume */
+const music = document.getElementById("bgMusic");
+music.volume = 0.2;
+document.body.addEventListener("click", () => music.play());
 </script>
 
 </body>
