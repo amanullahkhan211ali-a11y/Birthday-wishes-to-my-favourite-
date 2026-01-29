@@ -3,166 +3,157 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Mohtarma 💖</title>
-
-<!-- Romantic Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<title>Happy Birthday Mohtarma 💖</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-    overflow:hidden;
-    font-family:'Poppins',sans-serif;
-    background: radial-gradient(circle at top left,#ff9acb,#ff4f81,#b30059);
-    height:100vh;
-    color:white;
+font-family:'Segoe UI',sans-serif;
+overflow:hidden;
+background:linear-gradient(270deg,#ff9a9e,#fad0c4,#fbc2eb,#a6c1ee);
+background-size:800% 800%;
+animation:bgMove 15s ease infinite;
+color:white;
+text-align:center;
+}
+@keyframes bgMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
 }
 
-/* Moving background glow */
-body::before{
-    content:"";
-    position:fixed;
-    width:200%;
-    height:200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 60%);
-    animation: moveBg 10s linear infinite;
-}
-@keyframes moveBg{
-    0%{transform:translate(-10%,-10%)}
-    50%{transform:translate(10%,10%)}
-    100%{transform:translate(-10%,-10%)}
-}
-
-/* Screens */
 .screen{
-    position:absolute;
-    width:100%;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-    opacity:0;
-    pointer-events:none;
-    transition:1s;
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+opacity:0;
+transition:1s;
 }
-.active{opacity:1;pointer-events:auto}
+.active{opacity:1}
 
-/* Romantic heading */
-h1{
-    font-family:'Great Vibes',cursive;
-    font-size:3rem;
-    text-shadow:0 0 20px #fff;
-}
+h1{font-size:2.2rem;text-shadow:0 0 20px #ff69b4}
 
-/* Buttons */
 button{
-    margin-top:25px;
-    padding:12px 35px;
-    font-size:18px;
-    border:none;
-    border-radius:30px;
-    background:#ff2e77;
-    color:white;
-    box-shadow:0 0 20px #ff2e77;
+margin-top:25px;
+padding:12px 30px;
+border:none;
+border-radius:30px;
+font-size:1.1rem;
+background:#ff4d88;
+color:white;
+box-shadow:0 0 20px #ff69b4;
 }
 
-/* Cake */
-.cake{
-    width:250px;
-    margin-top:20px;
-    animation: glow 2s infinite alternate;
-}
-@keyframes glow{
-    from{filter:drop-shadow(0 0 10px #fff)}
-    to{filter:drop-shadow(0 0 30px #ff69b4)}
-}
-
-/* Anime image */
-.anime{
-    width:85%;
-    max-width:420px;
-    border-radius:20px;
-    box-shadow:0 0 40px pink;
-    animation: zoom 6s infinite alternate;
+img{
+width:280px;
+border-radius:20px;
+box-shadow:0 0 30px rgba(255,255,255,0.6);
+margin-top:20px;
+animation:zoom 5s ease infinite;
 }
 @keyframes zoom{
-    from{transform:scale(1)}
-    to{transform:scale(1.05)}
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.08)}
 }
 
-/* Hearts floating */
+/* Shayari royal look */
+.shayari{
+font-size:1.6rem;
+padding:20px;
+line-height:2.4rem;
+text-shadow:0 0 25px #fff;
+font-family:'Georgia',serif;
+}
+
+/* floating hearts */
 .heart{
-    position:absolute;
-    color:#ff6fae;
-    animation:float 6s linear infinite;
+position:absolute;
+font-size:22px;
+animation:float 6s linear infinite;
 }
 @keyframes float{
-    0%{transform:translateY(0);opacity:1}
-    100%{transform:translateY(-600px);opacity:0}
+0%{transform:translateY(100vh);opacity:0}
+50%{opacity:1}
+100%{transform:translateY(-10vh);opacity:0}
 }
 </style>
 </head>
 
 <body>
 
-<!-- Music -->
-<audio id="music" src="happy_birthday_my_sweetheart_my_life_my_love_status_song_WhatsApp_status_birthday_status(256k).mp3" loop></audio>
+<audio id="music" src="song.mp3" loop></audio>
 
-<!-- SCREEN 1 -->
-<div class="screen active" id="screen1">
-    <h1>Mene Aap Ke Liye Kuch Special Banaya Hai 💖</h1>
-    <button onclick="start()">Dekho 💗</button>
+<!-- Screen 1 -->
+<div class="screen active" id="s1">
+<h1>Mene Aap Ke Liye Kuch Special Banaya Hai 💖<br>Dekhna Chahti Ho?</h1>
+<button onclick="start()">Dekho ✨</button>
 </div>
 
-<!-- SCREEN 2 (CAKE) -->
-<div class="screen" id="screen2">
-    <h1>This is for you, let's cut it 🎂</h1>
-    <img src="https://i.imgur.com/OdL0XPt.png" class="cake">
-    <h2 style="margin-top:15px;font-family:'Great Vibes',cursive;font-size:2rem;">Happy Birthday Mohtarma 💗</h2>
-    <button onclick="next()">CUT 💖</button>
+<!-- Screen 2 Cake -->
+<div class="screen" id="s2">
+<h1>This is for you, let's cut it 🎂<br>Happy Birthday Mohtarma 💗</h1>
+<img src="cake.jpg">
+<button onclick="next(3)">Cut 🎂</button>
 </div>
 
-<!-- SCREEN 3 (ANIME) -->
-<div class="screen" id="screen3">
-    <h1>Our Special Moment 💞</h1>
-    <img src="anime.png" class="anime">
-    <button onclick="final()">Open Love Letter 💌</button>
+<!-- Screen 3 Couple -->
+<div class="screen" id="s3">
+<h1>Yeh Pal Sirf Aap Ke Naam 💑</h1>
+<img src="couple.jpg">
+<button onclick="next(4)">Aage 💖</button>
 </div>
 
-<!-- SCREEN 4 -->
-<div class="screen" id="screen4">
-    <h1>You Are My Most Beautiful Gift 💖</h1>
+<!-- Screen 4 Shayari -->
+<div class="screen" id="s4">
+<div class="shayari">
+یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے<br>
+ورنہ چاند کی کہاں سالگرہ ہوتی ہے<br><br>
+
+फूलों ने अमृत का जाम भेजा है,<br>
+सूरज ने गगन से सलाम भेजा है,<br>
+मुबारक हो मोहतरमा आप को आप जन्मदिन,<br>
+हमने दिल से आप को ये पैगाम भेजा है।<br><br>
+
+Taaron se aage bhi koi duniya hogi,<br>
+Jahan har khushi Mohtarma AAP ke naam hogi,<br>
+Mubarak ho janamdin meri jaan,<br>
+Aaj ki har dua AAP ke liye hi hogi.<br><br>
+
+خدا سے کیا مانگوں آپ کے لیے میں،<br>
+کہ آپ خود کسی کی دعا کا اثر لگتی ہو۔<br>
+مبارک ہو محترمہ یہ یومِ ولادت کا حسین دن،<br>
+آپ زمین پہ رہتی ہو مگر چاند کی چھوی لگتی ہو۔
+</div>
 </div>
 
 <script>
-const music=document.getElementById("music");
-music.volume=0.2;
+let music=document.getElementById("music");
 
 function start(){
-    music.play();
-    change(1,2);
+music.volume=0.4;
+music.play();
+next(2);
 }
-function next(){change(2,3);}
-function final(){change(3,4);}
-function change(a,b){
-    document.getElementById("screen"+a).classList.remove("active");
-    document.getElementById("screen"+b).classList.add("active");
+
+function next(n){
+document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+document.getElementById("s"+n).classList.add('active');
 }
 
 /* floating hearts */
 setInterval(()=>{
-    let h=document.createElement("div");
-    h.className="heart";
-    h.innerHTML="💗";
-    h.style.left=Math.random()*100+"%";
-    h.style.bottom="0px";
-    h.style.fontSize=(20+Math.random()*30)+"px";
-    document.body.appendChild(h);
-    setTimeout(()=>h.remove(),6000);
-},500);
+let heart=document.createElement("div");
+heart.innerHTML="💖";
+heart.className="heart";
+heart.style.left=Math.random()*100+"%";
+heart.style.fontSize=(Math.random()*20+20)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+},700);
 </script>
 
 </body>
