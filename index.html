@@ -1,52 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday</title>
+<title>Happy Birthday Mohtarma</title>
+
 <style>
-body{margin:0;font-family:sans-serif;text-align:center;color:white;background:linear-gradient(-45deg,#ff4e8a,#ff6fa5,#ff85b8);background-size:400% 400%;animation:bg 10s infinite alternate;}
-@keyframes bg{0%{background-position:left;}100%{background-position:right;}}
-h1{margin-top:25px;text-shadow:0 0 15px white;}
-.box{background:rgba(0,0,0,0.35);margin:20px;padding:20px;border-radius:20px;}
-button{background:#ff2e6d;border:none;padding:15px 25px;margin:10px;border-radius:30px;color:white;font-size:17px;}
-img{width:85%;max-width:320px;border-radius:20px;margin-top:15px;box-shadow:0 0 20px pink;}
-#shayari{font-size:22px;margin-top:10px;min-height:60px;}
-#popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;}
-.popupBox{background:#ff4e8a;padding:25px;border-radius:20px;width:80%;max-width:300px;}
+body{
+margin:0;
+font-family:sans-serif;
+text-align:center;
+background:linear-gradient(135deg,#ff8fb1,#ff4d88);
+color:white;
+overflow-x:hidden;
+}
+h1{
+font-size:38px;
+margin-top:20px;
+font-family:cursive;
+}
+.box{
+background:#8a3f5d;
+margin:20px;
+padding:20px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+button{
+padding:12px 20px;
+margin:10px;
+border:none;
+border-radius:30px;
+font-size:18px;
+background:#ff2e63;
+color:white;
+box-shadow:0 0 15px #ff2e63;
+}
+img{
+width:90%;
+max-width:320px;
+border-radius:15px;
+margin:10px;
+}
+#shayari{
+font-size:20px;
+margin:20px;
+line-height:30px;
+}
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+justify-content:center;
+align-items:center;
+}
+.popup div{
+background:white;
+color:black;
+padding:20px;
+border-radius:10px;
+}
 </style>
 </head>
 
 <body>
 
-<h1>Happy Birthday Mohtarma 💗<br>From Akram Ali Khan</h1>
+<h1>Happy Birthday Mohtarma 💖</h1>
 
 <div class="box">
-<h2>Choose one 🎀</h2>
-<button onclick="cutCake()">🎂 Cut Cake</button>
-<button onclick="openSurprise()">🎁 Surprise</button>
-<button onclick="showMsg()">💌 Message</button>
-<button onclick="blessing()">🤲 Blessing</button>
+<h2>This is for you, let's cut it 🎂</h2>
+<button onclick="cutCake()">Cut Cake 🎉</button>
+<button onclick="openSurprise()">Surprise 🎁</button>
+<button onclick="blessing()">Blessing 🤲</button>
 </div>
 
 <img src="anime.png.jpg">
 <img src="cake.png.jpg">
 
-<div class="box"><div id="shayari"></div></div>
+<div id="shayari" class="box"></div>
 
-<audio id="music" loop>
+<div class="popup" id="popup">
+<div id="popupText"></div>
+</div>
+
+<audio id="music" autoplay loop>
 <source src="happy_birthday_my_sweetheart_my_life_my_love_status_song_WhatsApp_status_birthday_status(256k).mp3" type="audio/mp3">
 </audio>
-
-<div id="popup"><div class="popupBox" id="popupText"></div></div>
 
 <script>
 let music=document.getElementById("music");
 document.body.addEventListener("click",()=>music.play(),{once:true});
 
-function cutCake(){showPopup("Cake cut 🎂 Happy Birthday Mohtarma 💖");}
-function openSurprise(){showPopup("Surprise! 💖 Akram Ali Khan loves you so much 🌹");}
-function showMsg(){showPopup("Tum meri zindagi ki sabse pyari muskurahat ho ✨💞");}
-function blessing(){showPopup("Allah tumhe lambi zindagi, khushiyan aur kamiyabi de 🤲💫");}
+function cutCake(){showPopup("Cake cut 🎂 Happy Birthday 💖 From Akram Ali Khan");}
+function openSurprise(){showPopup("Surprise! 💞 Aap duniya ki sabse khoobsurat muskurahat ho ✨");}
+function blessing(){showPopup("Allah aapko lambi zindagi, sehat aur khushiyan de 🤲💫");}
 
 function showPopup(text){
 popupText.innerHTML=text+"<br><br><button onclick='closePop()'>Close</button>";
@@ -55,19 +106,28 @@ popup.style.display="flex";
 function closePop(){popup.style.display="none";}
 
 let lines=[
-"ہم نے دل سے آپ کو یہ پیغام بھیجا ہے ❤️",
-"Humne dil se aapko ye paigam bheja hai 💌",
-"Suraj ne gagan se salaam bheja hai ☀️",
-"تاروں سے آگے بھی کوئی دنیا ہوگی ✨",
-"Rab kare tum hamesha muskurao 🌸"
+`फूलों ने अमृत का जाम भेजा है,<br>
+सूरज ने गगन से सलाम भेजा है,<br>
+मुबारक हो मोहतरमा आप को आप जन्मदिन,<br>
+हमने दिल से आप को ये पैगाम भेजा है।`,
+
+`Taaron se aage bhi koi duniya hogi,<br>
+Jahan har khushi Mohtarma AAP ke naam hogi,<br>
+Mubarak ho janamdin meri jaan,<br>
+Aaj ki har dua AAP ke liye hi hogi.`,
+
+`خدا سے کیا مانگوں آپ کے لیے میں،<br>
+کہ آپ خود کسی کی دعا کا اثر لگتی ہو۔<br>
+مبارک ہو محترمہ یہ یومِ ولادت کا حسین دن،<br>
+آپ زمین پہ رہتی ہو مگر چاند کی چھوی لگتی ہو۔`
 ];
 
 let i=0;
 function show(){
-document.getElementById("shayari").innerText=lines[i];
+document.getElementById("shayari").innerHTML=lines[i];
 i=(i+1)%lines.length;
 }
-setInterval(show,3000);
+setInterval(show,5000);
 show();
 </script>
 
