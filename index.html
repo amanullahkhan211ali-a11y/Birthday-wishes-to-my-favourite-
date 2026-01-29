@@ -1,1 +1,108 @@
-https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=happy-birthday-to-you-piano-version-13976.mp3
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mohtarma 💗</title>
+
+<style>
+body {
+  margin:0;
+  background: linear-gradient(45deg,#ff9a9e,#fad0c4,#fad0c4,#ffdde1);
+  font-family: 'Segoe UI', sans-serif;
+  color:white;
+  text-align:center;
+  overflow:hidden;
+}
+
+.slide {
+  position:absolute;
+  width:100%;
+  top:40%;
+  transform:translateY(-50%);
+  opacity:0;
+  transition:1.5s;
+  padding:20px;
+}
+
+.active { opacity:1; }
+
+h1 {font-size:40px;}
+p {font-size:22px; line-height:1.6;}
+
+.heart {
+  position:absolute;
+  color:#ff4d6d;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0%{transform:translateY(100vh) scale(0.5);}
+  100%{transform:translateY(-10vh) scale(1.2);}
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=happy-birthday-to-you-piano-version-13976.mp3" type="audio/mpeg">
+</audio>
+
+<div id="s1" class="slide active"><h1>3</h1></div>
+<div id="s2" class="slide"><h1>2</h1></div>
+<div id="s3" class="slide"><h1>1</h1></div>
+
+<div id="s4" class="slide">
+  <h1>Happy Birthday Mohtarma 💗</h1>
+</div>
+
+<div id="s5" class="slide">
+  <p>یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے<br>
+  ورنہ چاند کی کہاں سالگرہ ہوتی ہے</p>
+</div>
+
+<div id="s6" class="slide">
+  <p>फूलों ने अमृत का जाम भेजा है, सूरज ने गगन से सलाम भेजा है,<br>
+  मुबारक हो मोहतरमा आप को आप जन्मदिन,<br>
+  हमने दिल से आप को ये पैगाम भेजा है।</p>
+</div>
+
+<div id="s7" class="slide">
+  <p>Taaron se aage bhi koi duniya hogi,<br>
+  Jahan har khushi Mohtarma AAP ke naam hogi,<br>
+  Mubarak ho janamdin meri jaan,<br>
+  Aaj ki har dua AAP ke liye hi hogi.</p>
+</div>
+
+<div id="s8" class="slide">
+  <p>خدا سے کیا مانگوں آپ کے لیے میں،<br>
+  کہ آپ خود کسی کی دعا کا اثر لگتی ہو۔<br>
+  مبارک ہو محترمہ یہ یومِ ولادت کا حسین دن،<br>
+  آپ زمین پہ رہتی ہو مگر چاند کی چھوی لگتی ہو۔</p>
+</div>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let i = 0;
+
+setInterval(() => {
+  slides[i].classList.remove('active');
+  i = (i + 1) % slides.length;
+  slides[i].classList.add('active');
+}, 4000);
+
+// floating hearts
+setInterval(()=>{
+  let heart = document.createElement("div");
+  heart.innerHTML="💖";
+  heart.className="heart";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(Math.random()*20+20)+"px";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),6000);
+},800);
+</script>
+
+</body>
+</html>
