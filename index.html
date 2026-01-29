@@ -3,144 +3,120 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Mohtarma 💖</title>
 
-<!-- Romantic Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<title>Happy Birthday Mohtarma 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin:0;
-  overflow:hidden;
-  text-align:center;
-  color:white;
-  font-family: 'Playfair Display', serif;
-  background: linear-gradient(-45deg,#ff4e7a,#ff758c,#ff7eb3,#ffb199);
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background: linear-gradient(-45deg,#ff9ec4,#ff4d88,#ffb6d9,#ff6fa3);
+    background-size:400% 400%;
+    animation: bgMove 10s ease infinite;
+    text-align:center;
+    color:white;
+    overflow-x:hidden;
 }
-@keyframes gradientMove {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
 h1{
-  font-family:'Great Vibes', cursive;
-  font-size:50px;
-  margin-top:20px;
-  text-shadow:0 0 20px pink;
+    font-family:'Great Vibes', cursive;
+    font-size:52px;
+    margin-top:30px;
+    text-shadow:0 0 20px rgba(255,255,255,0.8);
 }
 
 .box{
-  margin-top:40px;
-  font-size:22px;
-  background:rgba(0,0,0,0.3);
-  padding:20px;
-  border-radius:20px;
-  width:85%;
-  margin-left:auto;
-  margin-right:auto;
+    background:rgba(0,0,0,0.35);
+    margin:25px auto;
+    padding:25px;
+    border-radius:20px;
+    width:90%;
+    max-width:500px;
+    backdrop-filter:blur(10px);
 }
 
 button{
-  margin-top:25px;
-  padding:15px 30px;
-  border:none;
-  border-radius:30px;
-  font-size:18px;
-  background:#ff2e63;
-  color:white;
-  box-shadow:0 0 20px pink;
-}
-
-#cakeSection,#shayariSection,#coupleSection{
-  display:none;
-  margin-top:30px;
+    padding:14px 35px;
+    font-size:18px;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(45deg,#ff3d77,#ff6fa3);
+    color:white;
+    margin-top:15px;
+    box-shadow:0 0 20px #ff3d77;
 }
 
 img{
-  width:260px;
-  border-radius:20px;
-  margin-top:15px;
-  box-shadow:0 0 25px white;
+    width:85%;
+    max-width:300px;
+    border-radius:20px;
+    margin:15px 0;
+    box-shadow:0 0 25px rgba(255,255,255,0.6);
 }
 
-.shayari{
-  font-size:24px;
-  margin-top:20px;
-  animation:fadeIn 3s ease-in-out forwards;
-  opacity:0;
+/* floating hearts */
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:22px;
+    animation: float 6s linear infinite;
 }
-@keyframes fadeIn{
-  to{opacity:1}
+@keyframes float{
+    0%{transform:translateY(0);opacity:1;}
+    100%{transform:translateY(-110vh);opacity:0;}
 }
 </style>
 </head>
+
 <body>
 
 <h1>Happy Birthday Mohtarma 💗</h1>
 
-<div class="box" id="intro">
-Mene Aap ke liye kuch special banaya hai... 💖  
-<br> Kya aap dekhna chahti ho?
-<br>
-<button onclick="startExperience()">Haan 💕</button>
+<div class="box">
+    <p>This is for you, let's cut it 🎂</p>
+    <button onclick="showCake()">Cut Cake 🎉</button>
 </div>
 
-<div id="cakeSection">
-  <div class="box">
-    This is for you, let's cut it 🎂  
-    <br>
-    <button onclick="cutCake()">Cut Cake 🎉</button>
-  </div>
-  <img src="cake.png">
+<div id="cakeSection" style="display:none;">
+    <img src="cake.png.jpg">
 </div>
 
-<div id="coupleSection">
-  <img src="couple.png">
+<div id="animeSection" style="display:none;">
+    <img src="anime.png.jpg">
 </div>
 
-<div id="shayariSection" class="box">
-  <div class="shayari">
-  یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے<br>
-  ورنہ چاند کی کہاں سالگرہ ہوتی ہے
-  </div>
-  <div class="shayari">
-  फूलों ने अमृत का जाम भेजा है,  
-  सूरज ने गगन से सलाम भेजा है,  
-  मुबारक हो मोहतरमा आप को आप जन्मदिन,  
-  हमने दिल से आप को ये पैगाम भेजा है।
-  </div>
-  <div class="shayari">
-  Taaron se aage bhi koi duniya hogi,  
-  Jahan har khushi Mohtarma AAP ke naam hogi,  
-  Mubarak ho janamdin meri jaan,  
-  Aaj ki har dua AAP ke liye hi hogi.
-  </div>
-  <div class="shayari">
-  خدا سے کیا مانگوں آپ کے لیے میں،  
-  کہ آپ خود کسی کی دعا کا اثر لگتی ہو۔  
-  مبارک ہو محترمہ یہ یومِ ولادت کا حسین دن،  
-  آپ زمین پہ رہتی ہو مگر چاند کی چھوی لگتی ہو۔
-  </div>
+<div class="box" id="shayari" style="display:none;">
+یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے <br>
+ورنہ چاند کی کہاں سالگرہ ہوتی ہے
 </div>
 
-  <audio id="bgMusic" autoplay loop>
-  <source src="happy_birthday_my_sweetheart_my_life_my_love_status_song_WhatsApp_status_birthday_status(256k).mp3" type="audio/mpeg">
+<audio id="song" autoplay loop>
+<source src="happy_birthday_my_sweetheart_my_life_my_love_status_song_WhatsApp_status_birthday_status(256k).mp3" type="audio/mp3">
 </audio>
 
 <script>
-function startExperience(){
-  document.getElementById("intro").style.display="none";
-  document.getElementById("cakeSection").style.display="block";
-  document.getElementById("bgMusic").play();
+function showCake(){
+    document.getElementById("cakeSection").style.display="block";
+    document.getElementById("animeSection").style.display="block";
+    document.getElementById("shayari").style.display="block";
 }
 
-function cutCake(){
-  document.getElementById("coupleSection").style.display="block";
-  document.getElementById("shayariSection").style.display="block";
-}
+/* floating hearts */
+setInterval(()=>{
+    let heart=document.createElement("div");
+    heart.innerHTML="💖";
+    heart.className="heart";
+    heart.style.left=Math.random()*100+"%";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+},500);
 </script>
 
 </body>
