@@ -3,128 +3,112 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Mohtarma 💗</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Nastaliq+Urdu&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<title>Happy Birthday Mohtarma 💖</title>
 
 <style>
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  text-align:center;
-  color:white;
-  overflow-x:hidden;
-  background:linear-gradient(-45deg,#ff4e8a,#ff9ecb,#ff5fa2,#ff2e75);
-  background-size:400% 400%;
-  animation:bgMove 10s ease infinite;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  color: white;
+  overflow-x: hidden;
+  background: linear-gradient(-45deg,#ff4e8a,#ff6fa5,#ff85b8,#ff4e8a);
+  background-size: 400% 400%;
+  animation: bgMove 10s infinite alternate;
 }
 
-@keyframes bgMove{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+@keyframes bgMove {
+  0%{background-position:left;}
+  100%{background-position:right;}
 }
 
-h1{
-  font-family:'Dancing Script',cursive;
-  font-size:42px;
-  margin-top:30px;
+h1 {
+  font-size: 38px;
+  margin-top: 30px;
+  text-shadow: 0 0 15px #fff;
 }
 
-.box{
-  background:rgba(0,0,0,0.35);
-  margin:20px;
-  padding:20px;
-  border-radius:20px;
-  box-shadow:0 0 20px rgba(255,255,255,0.3);
+.box {
+  background: rgba(0,0,0,0.35);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #ff9dcf;
 }
 
-button{
-  background:#ff2e75;
-  color:white;
-  border:none;
-  padding:15px 35px;
-  border-radius:50px;
-  font-size:18px;
-  cursor:pointer;
-  box-shadow:0 0 15px pink;
+button {
+  background: #ff2e6d;
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  font-size: 20px;
+  border-radius: 40px;
+  margin-top: 10px;
+  box-shadow: 0 0 20px #ff2e6d;
 }
 
-img{
-  width:80%;
-  max-width:320px;
-  border-radius:20px;
-  margin:15px 0;
-  box-shadow:0 0 20px white;
+img {
+  width: 85%;
+  max-width: 320px;
+  border-radius: 20px;
+  margin-top: 15px;
+  box-shadow: 0 0 25px #fff;
 }
 
-/* Shayari Slider */
-.slide{
-  display:none;
-  font-size:22px;
-  line-height:1.6;
-}
-.active{display:block;}
-
-.urdu{
-  font-family:'Noto Nastaliq Urdu', serif;
-  font-size:26px;
+#shayari {
+  font-size: 22px;
+  margin-top: 10px;
+  min-height: 80px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- SONG -->
-<audio autoplay loop>
-<source src="happy_birthday_my_sweetheart_my_life_my_love_status_song_WhatsApp_status_birthday_status(256k).mp3" type="audio/mpeg">
-</audio>
-
 <h1>Happy Birthday Mohtarma 💗</h1>
 
 <div class="box">
   <h2>This is for you, let's cut it 🎂</h2>
-  <button onclick="showCake()">Cut Cake 🎉</button>
+  <button onclick="cutCake()">Cut Cake 🎉</button>
 </div>
 
-<div id="cakeSection" style="display:none">
-  <img src="cake.png.jpg">
+<img src="anime.png.jpg">
+<img src="cake.png.jpg">
+
+<div class="box">
+  <div id="shayari"></div>
 </div>
 
-<div>
-  <img src="anime.png.jpg">
-</div>
-
-<div class="box" id="shayariBox">
-  <div class="slide active urdu">یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے</div>
-  <div class="slide urdu">ورنہ چاند کی کہاں سالگرہ ہوتی ہے</div>
-  <div class="slide">फूलों ने अमृत का जाम भेजा है</div>
-  <div class="slide">सूरज ने गगन से सलाम भेजा है</div>
-  <div class="slide">मुबारक हो मोहतरमा आपको आपका जन्मदिन</div>
-  <div class="slide">हमने दिल से आपको ये पैगाम भेजा है</div>
-  <div class="slide">Taaron se aage bhi koi duniya hogi</div>
-  <div class="slide">Jahan har khushi Mohtarma AAP ke naam hogi</div>
-  <div class="slide">Mubarak ho janamdin meri jaan</div>
-  <div class="slide">Aaj ki har dua AAP ke liye hi hogi</div>
-  <div class="slide urdu">خدا سے کیا مانگوں آپ کے لیے میں</div>
-  <div class="slide urdu">کہ آپ خود کسی کی دعا کا اثر لگتی ہو</div>
-  <div class="slide urdu">مبارک ہو محترمہ یہ یومِ ولادت کا حسین دن</div>
-  <div class="slide urdu">آپ زمین پہ رہتی ہو مگر چاند کی چھوی لگتی ہو</div>
-</div>
+<audio id="bgMusic" loop>
+  <source src="happy_birthday_my_sweetheart_my_life_my_love_status_song_WhatsApp_status_birthday_status(256k).mp3" type="audio/mp3">
+</audio>
 
 <script>
-function showCake(){
-  document.getElementById("cakeSection").style.display="block";
+// Mobile song play fix
+document.body.addEventListener("click", function () {
+  document.getElementById("bgMusic").play();
+}, { once: true });
+
+// Cake message
+function cutCake(){
+  alert("Cake cut ho gaya 🎂 Happy Birthday Mohtarma 💖");
 }
 
-let slides=document.querySelectorAll(".slide");
+// Shayari slider
+let lines = [
+"तारों से आगे भी कोई दुनिया होगी ✨",
+"सूरज ने गगन से सलाम भेजा है ☀️",
+"मुबारक हो मोहतरमा, आपको जन्मदिन 💐",
+"हमने दिल से आपको ये पैगाम भेजा है ❤️"
+];
+
 let i=0;
-setInterval(()=>{
-  slides[i].classList.remove("active");
-  i=(i+1)%slides.length;
-  slides[i].classList.add("active");
-},3000);
+function showShayari(){
+  document.getElementById("shayari").innerText = lines[i];
+  i=(i+1)%lines.length;
+}
+setInterval(showShayari, 3000);
+showShayari();
 </script>
 
 </body>
