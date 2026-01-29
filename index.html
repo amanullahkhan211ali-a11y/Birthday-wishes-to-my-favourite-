@@ -1,22 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- 🌟 Premium Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<!-- 🌟 PREMIUM CINEMATIC FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
-<title>Special For You 💖</title>
+<title>For Someone Special 💖</title>
 
 <style>
 body {
   margin:0;
   overflow:hidden;
-  background: radial-gradient(circle at center, #ff4d6d, #c9184a);
+  font-family:'Poppins',sans-serif;
   color:white;
-  font-family: 'Poppins', sans-serif;
   text-align:center;
+}
+
+/* 🌌 Animated Cinematic Background */
+body::before {
+  content:"";
+  position:fixed;
+  width:200%;
+  height:200%;
+  background: radial-gradient(circle at 30% 30%, #ff8fa3, transparent 40%),
+              radial-gradient(circle at 70% 60%, #ff4d6d, transparent 40%),
+              linear-gradient(120deg,#c9184a,#ff4d6d);
+  animation: moveBG 12s infinite alternate ease-in-out;
+  z-index:-2;
+}
+@keyframes moveBG {
+  from {transform:translate(0,0) scale(1);}
+  to {transform:translate(-50px,-30px) scale(1.1);}
+}
+
+/* ✨ Glow particles */
+canvas {
+  position:fixed;
+  top:0;left:0;
+  z-index:-1;
 }
 
 /* Intro Screen */
@@ -24,39 +47,40 @@ body {
   position:fixed;
   width:100%;
   height:100vh;
+  background:#c9184a;
   display:flex;
+  flex-direction:column;
   justify-content:center;
   align-items:center;
-  flex-direction:column;
-  background:linear-gradient(135deg,#ff4d6d,#c9184a);
   z-index:10;
 }
 
 #intro h2 {
-  font-family:'Playfair Display', serif;
+  font-family:'Cinzel',serif;
   font-size:26px;
   margin-bottom:20px;
 }
 
+/* Button */
 button {
-  padding:12px 30px;
+  padding:12px 28px;
   border:none;
   border-radius:30px;
   font-size:16px;
-  background:#fff;
-  color:#c9184a;
   font-weight:bold;
+  background:white;
+  color:#c9184a;
 }
 
-/* Slides */
+/* 🎬 Scene Slides */
 .scene {
   position:absolute;
-  width:90%;
+  width:85%;
   top:45%;
   left:50%;
-  transform:translate(-50%,-50%) scale(0.9);
+  transform:translate(-50%,-50%) scale(0.8);
   opacity:0;
-  transition:1s;
+  transition:1.2s ease;
 }
 
 .active {
@@ -64,63 +88,63 @@ button {
   transform:translate(-50%,-50%) scale(1);
 }
 
+/* 🌟 Luxury Headings */
 h1 {
-  font-family:'Playfair Display', serif;
-  font-size:36px;
-  text-shadow:0 0 20px #fff,0 0 30px #ff1a66;
+  font-family:'Cinzel',serif;
+  font-size:40px;
+  letter-spacing:2px;
+  background:linear-gradient(90deg,#fff,#ffd6e0,#fff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 0 15px #ff4d88;
 }
 
+/* Poetry text */
 p {
   font-size:20px;
   line-height:1.7;
-  text-shadow:0 0 10px #ff4d88,2px 2px 6px black;
-}
-
-/* Stars Background */
-canvas {
-  position:fixed;
-  top:0;left:0;
-  z-index:-1;
+  text-shadow:0 0 10px #ff8fa3,2px 2px 6px black;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Intro Message -->
+<!-- 💌 Intro -->
 <div id="intro">
   <h2>Maine aap ke liye kuch special banaya hai 💖<br>Dekhna chahti ho?</h2>
-  <button onclick="startSite()">Haan Dekhna Hai</button>
+  <button onclick="start()">Haan Dekhna Hai</button>
 </div>
 
 <canvas id="bg"></canvas>
 
-<!-- 🎵 Song -->
-<audio id="bgMusic" loop>
+<!-- 🎵 Music -->
+<audio id="music" loop>
   <source src="song.mp3" type="audio/mpeg">
 </audio>
 
 <!-- Scenes -->
 <div class="scene"><h1>3... 2... 1...</h1></div>
 <div class="scene"><h1>Happy Birthday Mohtarma 🎂</h1></div>
-
 <div class="scene"><p>یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے<br>ورنہ چاند کی کہاں سالگرہ ہوتی ہے</p></div>
-
-<div class="scene"><p>फूलों ने अमृत का जाम भेजा है,<br>सूरज ने गगन से सलाम भेजा है,<br>मुबारक हो मोहतरमा आप को जन्मदिन,<br>हमने दिल से आप को ये पैगाम भेजा है।</p></div>
-
-<div class="scene"><p>Taaron se aage bhi koi duniya hogi,<br>Jahan har khushi Mohtarma AAP ke naam hogi,<br>Mubarak ho janamdin meri jaan,<br>Aaj ki har dua AAP ke liye hi hogi.</p></div>
-
-<div class="scene"><p>خدا سے کیا مانگوں آپ کے لیے میں،<br>کہ آپ خود کسی کی دعا کا اثر لگتی ہو۔<br>مبارک ہو محترمہ یہ یومِ ولادت کا حسین دن۔</p></div>
+<div class="scene"><p>फूलों ने अमृत का जाम भेजा है,<br>सूरज ने गगन से सलाम भेजा है,<br>मुबारक हो मोहतरमा आप को जन्मदिन</p></div>
+<div class="scene"><p>Taaron se aage bhi koi duniya hogi,<br>Jahan har khushi Mohtarma AAP ke naam hogi</p></div>
 
 <script>
-let scenes = document.querySelectorAll(".scene");
-let i = 0;
-let music = document.getElementById("bgMusic");
+let scenes=document.querySelectorAll(".scene");
+let i=0;
+let music=document.getElementById("music");
 
-function startSite(){
+function start(){
   document.getElementById("intro").style.display="none";
-  music.volume = 0.25;
+  music.volume=0;
   music.play();
+  let vol=0;
+  let fade=setInterval(()=>{
+    if(vol<0.25){vol+=0.02; music.volume=vol;}
+    else clearInterval(fade);
+  },200);
+
   scenes[0].classList.add("active");
   setInterval(()=>{
     scenes[i].classList.remove("active");
@@ -129,11 +153,10 @@ function startSite(){
   },3500);
 }
 
-/* Stars animation */
+/* 🌟 Particle animation */
 let canvas=document.getElementById("bg");
 let ctx=canvas.getContext("2d");
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
+canvas.width=innerWidth; canvas.height=innerHeight;
 let stars=[];
 for(let i=0;i<80;i++){
   stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2});
@@ -145,7 +168,7 @@ function draw(){
     ctx.beginPath();
     ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
     ctx.fill();
-    s.y-=0.3;
+    s.y-=0.4;
     if(s.y<0)s.y=canvas.height;
   });
   requestAnimationFrame(draw);
