@@ -3,152 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Happy Birthday Mohtarma 💗</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Nastaliq+Urdu&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
-    margin:0;
-    font-family:'Poppins', sans-serif;
-    background: linear-gradient(-45deg,#ff9ec4,#ff4d88,#ffb6d9,#ff6fa3);
-    background-size:400% 400%;
-    animation: bgMove 10s ease infinite;
-    text-align:center;
-    color:white;
-    overflow-x:hidden;
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  text-align:center;
+  color:white;
+  overflow-x:hidden;
+  background:linear-gradient(-45deg,#ff4e8a,#ff9ecb,#ff5fa2,#ff2e75);
+  background-size:400% 400%;
+  animation:bgMove 10s ease infinite;
 }
+
 @keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 h1{
-    font-family:'Great Vibes', cursive;
-    font-size:52px;
-    margin-top:30px;
-    text-shadow:0 0 20px rgba(255,255,255,0.8);
+  font-family:'Dancing Script',cursive;
+  font-size:42px;
+  margin-top:30px;
 }
 
 .box{
-    background:rgba(0,0,0,0.35);
-    margin:25px auto;
-    padding:25px;
-    border-radius:20px;
-    width:90%;
-    max-width:500px;
-    backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.35);
+  margin:20px;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 0 20px rgba(255,255,255,0.3);
 }
 
 button{
-    padding:14px 35px;
-    font-size:18px;
-    border:none;
-    border-radius:40px;
-    background:linear-gradient(45deg,#ff3d77,#ff6fa3);
-    color:white;
-    margin-top:15px;
-    box-shadow:0 0 20px #ff3d77;
+  background:#ff2e75;
+  color:white;
+  border:none;
+  padding:15px 35px;
+  border-radius:50px;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:0 0 15px pink;
 }
 
 img{
-    width:85%;
-    max-width:300px;
-    border-radius:20px;
-    margin:15px 0;
-    box-shadow:0 0 25px rgba(255,255,255,0.6);
+  width:80%;
+  max-width:320px;
+  border-radius:20px;
+  margin:15px 0;
+  box-shadow:0 0 20px white;
 }
 
+/* Shayari Slider */
 .slide{
-    display:none;
-    font-size:20px;
-    line-height:1.6;
-    animation:fade 1s ease;
+  display:none;
+  font-size:22px;
+  line-height:1.6;
 }
 .active{display:block;}
 
-@keyframes fade{
-    from{opacity:0;}
-    to{opacity:1;}
-}
-
-/* floating hearts */
-.heart{
-    position:fixed;
-    bottom:-20px;
-    font-size:22px;
-    animation: float 6s linear infinite;
-}
-@keyframes float{
-    0%{transform:translateY(0);opacity:1;}
-    100%{transform:translateY(-110vh);opacity:0;}
+.urdu{
+  font-family:'Noto Nastaliq Urdu', serif;
+  font-size:26px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- SONG -->
+<audio autoplay loop>
+<source src="happy_birthday_my_sweetheart_my_life_my_love_status_song_WhatsApp_status_birthday_status(256k).mp3" type="audio/mpeg">
+</audio>
+
 <h1>Happy Birthday Mohtarma 💗</h1>
 
 <div class="box">
-    <p>Mene aap ke liye kuch special banaya hai… dekhna chahti ho? 💌</p>
-    <button onclick="startSurprise()">Yes 💖</button>
+  <h2>This is for you, let's cut it 🎂</h2>
+  <button onclick="showCake()">Cut Cake 🎉</button>
 </div>
 
-<div id="cakeSection" style="display:none;">
-    <img src="cake.png.jpg">
+<div id="cakeSection" style="display:none">
+  <img src="cake.png.jpg">
 </div>
 
-<div id="animeSection" style="display:none;">
-    <img src="anime.png.jpg">
+<div>
+  <img src="anime.png.jpg">
 </div>
 
-<div class="box" id="shayariBox" style="display:none;">
-    <div class="slide active">یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے</div>
-    <div class="slide">ورنہ چاند کی کہاں سالگرہ ہوتی ہے</div>
-    <div class="slide">خدا کرے مانگوں آپ کے لئے میں</div>
-    <div class="slide">آپ خود کسی کی دعا کا اثر لگتی ہو</div>
+<div class="box" id="shayariBox">
+  <div class="slide active urdu">یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے</div>
+  <div class="slide urdu">ورنہ چاند کی کہاں سالگرہ ہوتی ہے</div>
+  <div class="slide">फूलों ने अमृत का जाम भेजा है</div>
+  <div class="slide">सूरज ने गगन से सलाम भेजा है</div>
+  <div class="slide">मुबारक हो मोहतरमा आपको आपका जन्मदिन</div>
+  <div class="slide">हमने दिल से आपको ये पैगाम भेजा है</div>
+  <div class="slide">Taaron se aage bhi koi duniya hogi</div>
+  <div class="slide">Jahan har khushi Mohtarma AAP ke naam hogi</div>
+  <div class="slide">Mubarak ho janamdin meri jaan</div>
+  <div class="slide">Aaj ki har dua AAP ke liye hi hogi</div>
+  <div class="slide urdu">خدا سے کیا مانگوں آپ کے لیے میں</div>
+  <div class="slide urdu">کہ آپ خود کسی کی دعا کا اثر لگتی ہو</div>
+  <div class="slide urdu">مبارک ہو محترمہ یہ یومِ ولادت کا حسین دن</div>
+  <div class="slide urdu">آپ زمین پہ رہتی ہو مگر چاند کی چھوی لگتی ہو</div>
 </div>
-
-<div class="box">
-    <button onclick="playSong()">🎵 Play Music</button>
-</div>
-
-<audio id="song" loop>
-<source src="happy_birthday_my_sweetheart_my_life_my_love_status_song_WhatsApp_status_birthday_status(256k).mp3" type="audio/mp3">
-</audio>
 
 <script>
-function startSurprise(){
-    document.getElementById("cakeSection").style.display="block";
-    document.getElementById("animeSection").style.display="block";
-    document.getElementById("shayariBox").style.display="block";
+function showCake(){
+  document.getElementById("cakeSection").style.display="block";
 }
 
-function playSong(){
-    document.getElementById("song").play();
-}
-
-/* shayari slider */
 let slides=document.querySelectorAll(".slide");
 let i=0;
 setInterval(()=>{
-    slides[i].classList.remove("active");
-    i=(i+1)%slides.length;
-    slides[i].classList.add("active");
+  slides[i].classList.remove("active");
+  i=(i+1)%slides.length;
+  slides[i].classList.add("active");
 },3000);
-
-/* floating hearts */
-setInterval(()=>{
-    let heart=document.createElement("div");
-    heart.innerHTML="💖";
-    heart.className="heart";
-    heart.style.left=Math.random()*100+"%";
-    document.body.appendChild(heart);
-    setTimeout(()=>heart.remove(),6000);
-},500);
 </script>
 
 </body>
