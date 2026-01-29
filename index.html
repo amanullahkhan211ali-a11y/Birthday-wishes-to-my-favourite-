@@ -61,6 +61,19 @@ img{
     box-shadow:0 0 25px rgba(255,255,255,0.6);
 }
 
+.slide{
+    display:none;
+    font-size:20px;
+    line-height:1.6;
+    animation:fade 1s ease;
+}
+.active{display:block;}
+
+@keyframes fade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
 /* floating hearts */
 .heart{
     position:fixed;
@@ -80,8 +93,8 @@ img{
 <h1>Happy Birthday Mohtarma 💗</h1>
 
 <div class="box">
-    <p>This is for you, let's cut it 🎂</p>
-    <button onclick="showCake()">Cut Cake 🎉</button>
+    <p>Mene aap ke liye kuch special banaya hai… dekhna chahti ho? 💌</p>
+    <button onclick="startSurprise()">Yes 💖</button>
 </div>
 
 <div id="cakeSection" style="display:none;">
@@ -92,21 +105,40 @@ img{
     <img src="anime.png.jpg">
 </div>
 
-<div class="box" id="shayari" style="display:none;">
-یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے <br>
-ورنہ چاند کی کہاں سالگرہ ہوتی ہے
+<div class="box" id="shayariBox" style="display:none;">
+    <div class="slide active">یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے</div>
+    <div class="slide">ورنہ چاند کی کہاں سالگرہ ہوتی ہے</div>
+    <div class="slide">خدا کرے مانگوں آپ کے لئے میں</div>
+    <div class="slide">آپ خود کسی کی دعا کا اثر لگتی ہو</div>
 </div>
 
-<audio id="song" autoplay loop>
+<div class="box">
+    <button onclick="playSong()">🎵 Play Music</button>
+</div>
+
+<audio id="song" loop>
 <source src="happy_birthday_my_sweetheart_my_life_my_love_status_song_WhatsApp_status_birthday_status(256k).mp3" type="audio/mp3">
 </audio>
 
 <script>
-function showCake(){
+function startSurprise(){
     document.getElementById("cakeSection").style.display="block";
     document.getElementById("animeSection").style.display="block";
-    document.getElementById("shayari").style.display="block";
+    document.getElementById("shayariBox").style.display="block";
 }
+
+function playSong(){
+    document.getElementById("song").play();
+}
+
+/* shayari slider */
+let slides=document.querySelectorAll(".slide");
+let i=0;
+setInterval(()=>{
+    slides[i].classList.remove("active");
+    i=(i+1)%slides.length;
+    slides[i].classList.add("active");
+},3000);
 
 /* floating hearts */
 setInterval(()=>{
