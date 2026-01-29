@@ -3,46 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Mohtarma 💗</title>
+<title>Happy Birthday Mohtarma 💖</title>
 
 <style>
 body {
     margin: 0;
-    background: linear-gradient(45deg,#ff9a9e,#fad0c4);
+    background: radial-gradient(circle at top, #ff758c, #ff7eb3);
     font-family: 'Segoe UI', sans-serif;
-    color: #b30059;   /* dark pink text */
+    color: white;
     text-align: center;
     overflow: hidden;
 }
 
+/* SLIDES */
 .slide {
-  position:absolute;
-  width:90%;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  opacity:0;
-  transition:1.5s;
-  padding:20px;
+    position: absolute;
+    width: 90%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
-.active {
-  opacity: 1 !important;
-  display: block !important;
-  z-index: 10;
+.slide.active { opacity: 1; }
+
+h1, p {
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff4d88;
 }
 
-h1 {font-size:40px;}
-p {font-size:22px; line-height:1.6;}
-
+/* HEARTS */
 .heart {
-  position:absolute;
-  color:#ff4d6d;
-  animation: float 6s linear infinite;
+    position: fixed;
+    top: -10px;
+    animation: fall 6s linear forwards;
+}
+@keyframes fall { to { transform: translateY(110vh); opacity: 0; } }
+
+/* ROSE PETALS */
+.petal {
+    position: fixed;
+    top: -10px;
+    animation: petalFall 8s linear forwards;
+}
+@keyframes petalFall {
+    to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
 }
 
-@keyframes float {
-  0%{transform:translateY(100vh) scale(0.5);}
-  100%{transform:translateY(-10vh) scale(1.2);}
+/* FIREWORKS */
+.firework {
+    position: fixed;
+    font-size: 24px;
+    animation: boom 1s ease-out forwards;
+}
+@keyframes boom {
+    from { transform: scale(0.2); opacity: 1; }
+    to { transform: scale(2); opacity: 0; }
+}
+
+/* LOVE LETTER */
+#letter {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: #ff4d88;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    box-shadow: 0 0 20px pink;
+}
+
+/* BUTTON */
+.btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    background: #ff4d88;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 15px #fff;
 }
 </style>
 </head>
@@ -50,63 +96,75 @@ p {font-size:22px; line-height:1.6;}
 <body>
 
 <audio autoplay loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=happy-birthday-to-you-piano-version-13976.mp3" type="audio/mpeg">
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b4d5b0e7.mp3?filename=happy-birthday-to-you-piano-version-11412.mp3">
 </audio>
 
-<div id="s1" class="slide active"><h1>3</h1></div>
-<div id="s2" class="slide"><h1>2</h1></div>
-<div id="s3" class="slide"><h1>1</h1></div>
+<div class="slide active"><h1>Happy Birthday Mohtarma 💖</h1></div>
 
-<div id="s4" class="slide">
-  <h1>Happy Birthday Mohtarma 💗</h1>
-</div>
+<div class="slide"><p>یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے<br>ورنہ چاند کی کہاں سالگرہ ہوتی ہے</p></div>
 
-<div id="s5" class="slide">
-  <p>یہ تو اک رسم جہاں ہے جو ادا ہوتی ہے<br>
-  ورنہ چاند کی کہاں سالگرہ ہوتی ہے</p>
-</div>
+<div class="slide"><p>फूलों ने अमृत का जाम भेजा है... 💐</p></div>
 
-<div id="s6" class="slide">
-  <p>फूलों ने अमृत का जाम भेजा है, सूरज ने गगन से सलाम भेजा है,<br>
-  मुबारक हो मोहतरमा आप को आप जन्मदिन,<br>
-  हमने दिल से आप को ये पैगाम भेजा है।</p>
-</div>
+<div class="slide"><p>Taaron se aage bhi koi duniya hogi... ✨</p></div>
 
-<div id="s7" class="slide">
-  <p>Taaron se aage bhi koi duniya hogi,<br>
-  Jahan har khushi Mohtarma AAP ke naam hogi,<br>
-  Mubarak ho janamdin meri jaan,<br>
-  Aaj ki har dua AAP ke liye hi hogi.</p>
-</div>
+<div class="slide"><p>خدا سے کیا مانگوں آپ کے لیے میں... 🌙</p></div>
 
-<div id="s8" class="slide">
-  <p>خدا سے کیا مانگوں آپ کے لیے میں،<br>
-  کہ آپ خود کسی کی دعا کا اثر لگتی ہو۔<br>
-  مبارک ہو محترمہ یہ یومِ ولادت کا حسین دن،<br>
-  آپ زمین پہ رہتی ہو مگر چاند کی چھوی لگتی ہو۔</p>
+<button class="btn" onclick="openLetter()">💌 Open Love Letter</button>
+
+<div id="letter">
+<h2>My Heart Says 💖</h2>
+<p>You are the most beautiful blessing in my life.  
+Aap sirf ek insan nahi, meri duniya ho. 🌍  
+Happy Birthday, meri jaan. 💕</p>
+<button onclick="closeLetter()">Close</button>
 </div>
 
 <script>
 let slides = document.querySelectorAll(".slide");
 let i = 0;
-
 function showSlide() {
-  slides.forEach(s => s.classList.remove("active"));
-  slides[i].classList.add("active");
-  i = (i + 1) % slides.length;
+    slides.forEach(s => s.classList.remove("active"));
+    slides[i].classList.add("active");
+    i = (i + 1) % slides.length;
 }
+setInterval(showSlide, 3000);
 
-setInterval(showSlide, 4000);
-showSlide();
+/* HEARTS */
+setInterval(()=> {
+    let h=document.createElement("div");
+    h.innerHTML="💖";
+    h.className="heart";
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize=(Math.random()*20+20)+"px";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+},600);
 
-// floating hearts
-setInterval(() => {
-  let heart = document.createElement("div");
-  heart.innerHTML = "💖";
-  heart.className = "heart";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (Math.random() * 20 + 20) + "px";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 6000);
-}, 800);
+/* PETALS */
+setInterval(()=> {
+    let p=document.createElement("div");
+    p.innerHTML="🌹";
+    p.className="petal";
+    p.style.left=Math.random()*100+"vw";
+    p.style.fontSize=(Math.random()*20+20)+"px";
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),8000);
+},800);
+
+/* FIREWORKS */
+setInterval(()=> {
+    let f=document.createElement("div");
+    f.innerHTML="🎆";
+    f.className="firework";
+    f.style.left=Math.random()*100+"vw";
+    f.style.top=Math.random()*50+"vh";
+    document.body.appendChild(f);
+    setTimeout(()=>f.remove(),1000);
+},2000);
+
+function openLetter(){ document.getElementById("letter").style.display="block"; }
+function closeLetter(){ document.getElementById("letter").style.display="none"; }
 </script>
+
+</body>
+</html>
