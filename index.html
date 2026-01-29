@@ -10,9 +10,26 @@ body {
     margin: 0;
     overflow: hidden;
     font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle at top, #ff4d6d, #c9184a);
     color: white;
     text-align: center;
+}
+
+/* 🌈 MOVING BACKGROUND */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #ff4d6d, #c9184a, #ff8fa3, #ff4d6d);
+    background-size: 400% 400%;
+    animation: bgMove 12s ease infinite;
+    z-index: -1;
+}
+
+@keyframes bgMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
 }
 
 /* Slides */
@@ -31,13 +48,8 @@ body {
 
 .active { opacity: 1; }
 
-/* Text Style */
 h1, p {
-    text-shadow: 
-        0 0 5px #ff4d88,
-        0 0 10px #ff4d88,
-        0 0 20px #ff1a66,
-        2px 2px 8px black;
+    text-shadow: 0 0 10px #ff4d88, 0 0 20px #ff1a66, 2px 2px 8px black;
 }
 
 /* Floating hearts */
@@ -69,6 +81,11 @@ button {
 </head>
 
 <body>
+
+<!-- 🎵 MUSIC -->
+<audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
 
 <div class="slide active">
     <h1>3... 2... 1... 💖</h1>
